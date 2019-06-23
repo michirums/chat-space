@@ -24,11 +24,9 @@
 
 ## groupsテーブル
 
-| Column     | Type    | Options                        |
-| ---------- | ------- | ------------------------------ |
-| user_id    | integer | null: false, foreign_key: true |
-| message_id | integer | null: false, foreign_key: true |
-| group_name | string  | null: false                    |
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
 
 ### Association
 - has_many :users, through: users_groups
