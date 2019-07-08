@@ -7,10 +7,10 @@
       %p.side-header__box__user-name test-user
       %ul.side-header__box__menu
         %li 
-          =link_to "", class: "side-header__box__menu__edit-user" do
+          =link_to "#", class: "side-header__box__menu__edit-user" do
             = fa_icon 'cog', class: "side-header__box__menu__edit-user"
         %li
-          =link_to "", class: "side-header__box__menu__new-group" do
+          =link_to "#", class: "side-header__box__menu__new-group" do
             = fa_icon 'edit', class: "side-header__box__menu__new-group"
   .groups
     .group
@@ -36,8 +36,8 @@
   .form
     %form.new_message
       .input-box
-        %input{:class => "input-box__text", :placeholder => "type a message", :type => "text"}
+        %input{class: "input-box__text", placeholder: "type a message", type: "text"}
         %label.input-box__image
           %i.fa.fa-image
-          %input{:class => "input-box__file", :type => "file"}
-      %input{:class => "submit-btn", :type => "submit", :value => "Send"}
+          %input{class: "input-box__file", type: "file"}
+      %input{class: "submit-btn", type: "submit", value: "Send"}
