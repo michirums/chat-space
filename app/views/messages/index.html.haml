@@ -1,3 +1,6 @@
+.flash-box
+  .notice グループを作成しました
+
 .chat-side
   .side-header
     .side-header__box
@@ -20,7 +23,7 @@
       %h2.main-header__left-box__current-group test-group
       %ul.main-header__left-box__member-list
         %li.main-header__left-box__member-list
-          Member : 
+          Member：
         %li.main-header__left-box__member-list__member
           Test-user
     .main-header__edit-btn Edit
@@ -31,3 +34,10 @@
         %p.message__upper-info__date 2019/07/07(Sun)18:00:00
       %p.message__text test-message
   .form
+    %form.new_message
+      .input-box
+        %input{:class => "input-box__text", :placeholder => "type a message", :type => "text"}
+        %label.input-box__image
+          %i.fa.fa-image
+          %input{:class => "input-box__file", :type => "file"}
+      %input{:class => "submit-btn", :type => "submit", :value => "Send"}
