@@ -43,7 +43,6 @@
     }
     &__menu a {
       color:#fff;
-      text-decoration: none;
     }
   }
 }
@@ -54,14 +53,15 @@
   height: calc(100vh - 100px);
   overflow: scroll;
   .group {
-    margin-bottom: 40px;
-    color: #FFFFFF;
-    &__group-name {
+    &__name {
       font-size: 15px;
       margin-bottom: 5px;
+      color: #FFFFFF;
     }
-    &__latest-message {
+    &__message {
       font-size: 11px;
+      color: #FFFFFF;
+      margin-bottom: 40px;
     }
   }
 }
