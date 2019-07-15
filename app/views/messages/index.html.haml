@@ -1,44 +1,31 @@
 .flash-box
-  .notice グループを作成しました
+  .notice
 
-.chat-side
-  .side-header
-    .side-header__box
-      %p.side-header__box__user-name
-        = current_user.name
-      %ul.side-header__box__menu
-        %li 
-          =link_to edit_user_path(current_user) do
-            = fa_icon 'cog', class: "side-header__box__menu__edit-user"
-        %li
-          =link_to "#", class: "side-header__box__menu__new-group" do
-            = fa_icon 'edit', class: "side-header__box__menu__new-group"
-  .groups
-    .group
-      %p.group__group-name test-group
-      %p.group__latest-message test-message
+.wrapper
 
-.chat-main
-  .main-header
-    .main-header__left-box
-      %h2.main-header__left-box__current-group test-group
-      %ul.main-header__left-box__member-list
-        %li.main-header__left-box__member-list
-          Member：
-        %li.main-header__left-box__member-list__member
-          Test-user
-    .main-header__edit-btn Edit
-  .messages
-    .message
-      .message__upper-info
-        %p.message__upper-info__talker test-user
-        %p.message__upper-info__date 2019/07/07(Sun)18:00:00
-      %p.message__text test-message
-  .form
-    %form.new_message
-      .input-box
-        %input{class: "input-box__text", placeholder: "type a message", type: "text"}
-        %label.input-box__image
-          %i.fa.fa-image
-          %input{class: "input-box__file", type: "file"}
-      %input{class: "submit-btn", type: "submit", value: "Send"}
+  = render 'shared/side_bar'
+
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group test-group
+        %ul.main-header__left-box__member-list
+          %li.main-header__left-box__member-list
+            Member：
+          %li.main-header__left-box__member-list__member
+            Test-user
+      .main-header__edit-btn Edit
+    .messages
+      .message
+        .message__upper-info
+          %p.message__upper-info__talker test-user
+          %p.message__upper-info__date 2019/07/07(Sun)18:00:00
+        %p.message__text test-message
+    .form
+      %form.new_message
+        .input-box
+          %input{class: "input-box__text", placeholder: "type a message", type: "text"}
+          %label.input-box__image
+            %i.fa.fa-image
+            %input{class: "input-box__file", type: "file"}
+        %input{class: "submit-btn", type: "submit", value: "Send"}
