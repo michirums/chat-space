@@ -21,11 +21,20 @@
           %p.message__upper-info__talker test-user
           %p.message__upper-info__date 2019/07/07(Sun)18:00:00
         %p.message__text test-message
+    -# .form
+    -#   %form.new_message
+    -#     .input-box
+    -#       %input{class: "input-box__text", placeholder: "type a message", type: "text"}
+    -#       %label.input-box__image
+    -#         %i.fa.fa-image
+    -#         %input{class: "input-box__file", type: "file"}
+    -#     %input{class: "submit-btn", type: "submit", value: "Send"}
+
     .form
-      %form.new_message
+      = form_for [@group, @message] do |f|
         .input-box
-          %input{class: "input-box__text", placeholder: "type a message", type: "text"}
-          %label.input-box__image
-            %i.fa.fa-image
-            %input{class: "input-box__file", type: "file"}
-        %input{class: "submit-btn", type: "submit", value: "Send"}
+          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+          = f.label :image, class: 'input-box__image' do
+            = fa_icon 'image', class: 'input-box__image'
+            = f.file_field :image, class: 'input-box__file'
+        = f.submit 'Send', class: 'submit-btn'
