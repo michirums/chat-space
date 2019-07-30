@@ -17,7 +17,8 @@
             - @group.group_users.each do |group_user|
               = group_user.user.name
       .main-header__edit-btn 
-        = link_to 'Edit', 'edit'
+        = link_to 'Edit', edit_group_path(@group)
+
     .messages
       = render @messages
 
