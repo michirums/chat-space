@@ -51,17 +51,17 @@ $(function(){
     .fail(function(){
       alert('error');
     })
+  });
+  
+  $(document).on('click', '.user-search-add', function () {
+    var name = $(this).attr("data-user-name");
+    var user_id = $(this).attr("data-user-id");
+    var html = appendMember(name, user_id);
+    $('#chat-group-users').append(html);
+    $(this).parent().remove();
+  });
 
-    $(document).on('click', '.user-search-add', function () {
-      var name = $(this).attr("data-user-name");
-      var user_id = $(this).attr("data-user-id");
-      var html = appendMember(name, user_id);
-      $('#chat-group-users').append(html);
-      $(this).parent().remove();
-    });
-
-    $(document).on("click", '.user-search-remove', function() {
-      $(this).parent().remove();
-    });
+  $(document).on("click", '.user-search-remove', function() {
+    $(this).parent().remove();
   });
 });
