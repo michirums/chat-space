@@ -54,9 +54,7 @@ $(function(){
 
   var reloadMessages = function() {
     last_message_id = $('.messages .message:last').data('message_id'); //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-    // group_id = $('.main-header__left-box__current-group').data('group_id');
     $.ajax({
-      // url: `/groups/${group_id}/api/messages`, 
       url: 'api/messages', //ルーティングで設定した通りのURLを指定
       type: 'get', //ルーティングで設定した通りhttpメソッドをgetに指定
       dataType: 'json',
